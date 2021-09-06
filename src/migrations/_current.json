@@ -1,0 +1,136 @@
+{
+    "tables": {
+        "Cast": {
+            "tableName": "Cast",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "name": {
+                    "field": "name",
+                    "seqType": "Sequelize.STRING"
+                },
+                "birthday": {
+                    "field": "birthday",
+                    "seqType": "Sequelize.DATE"
+                },
+                "deadday": {
+                    "allowNull": false,
+                    "field": "deadday",
+                    "seqType": "Sequelize.DATE"
+                },
+                "rating": {
+                    "field": "rating",
+                    "seqType": "Sequelize.ENUM('1', '2', '3', '4', '5')"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "deletedAt": {
+                    "field": "deletedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "Movies": {
+            "tableName": "Movies",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "name": {
+                    "field": "name",
+                    "seqType": "Sequelize.STRING"
+                },
+                "language": {
+                    "field": "language",
+                    "seqType": "Sequelize.STRING"
+                },
+                "status": {
+                    "field": "status",
+                    "seqType": "Sequelize.STRING"
+                },
+                "rating": {
+                    "field": "rating",
+                    "seqType": "Sequelize.ENUM('1', '2', '3', '4', '5')"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "deletedAt": {
+                    "field": "deletedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "MovieCast": {
+            "tableName": "MovieCast",
+            "schema": {
+                "movie_id": {
+                    "field": "movie_id",
+                    "primaryKey": true,
+                    "references": {
+                        "model": "Cast",
+                        "key": "id"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "CASCADE",
+                    "unique": "MovieCast_cast_id_movie_id_unique",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "cast_id": {
+                    "field": "cast_id",
+                    "primaryKey": true,
+                    "references": {
+                        "model": "Movies",
+                        "key": "id"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "CASCADE",
+                    "unique": "MovieCast_cast_id_movie_id_unique",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "deletedAt": {
+                    "field": "deletedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 1
+}

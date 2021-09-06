@@ -1,0 +1,35 @@
+{
+  "name": "movie-caster-orm-",
+  "version": "1.0.0",
+  "description": "for training and for assesment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:makemigrations": "./node_modules/sequelize-auto-migrations/bin/makemigration.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JhorgiHisamawa/Movie-Caster-ORM-.git"
+  },
+  "keywords": [
+    "ORM",
+    "sequelize",
+    "mysql",
+    "javascript",
+    "express"
+  ],
+  "author": "Jhorgi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JhorgiHisamawa/Movie-Caster-ORM-/issues"
+  },
+  "homepage": "https://github.com/JhorgiHisamawa/Movie-Caster-ORM-#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5",
+    "sequelize-auto-migrations": "github:scimonster/sequelize-auto-migrations#a063aa6535a3f580623581bf866cef2d609531ba",
+    "sequelize-cli": "^6.2.0"
+  }
+}
